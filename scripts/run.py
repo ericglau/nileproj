@@ -4,8 +4,12 @@ import asyncio
 def run(nre):
     print('from run')
 
-    classhash = nre.declare("contract", alias="contract")
-    print(classhash)
+    # classhash = nre.declare("contract", alias="contract")
+    # print(classhash)
+
+    nre.greet(["contract"])
+
+
 
 
     # address, abi = nre.declare("contract", alias="my_contract")

@@ -28,6 +28,12 @@ func get_balance{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_p
 end
 
 @external
+func reset_balance{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}():
+    balance.write(0)
+    return ()
+end
+
+@external
 func upgrade{
         syscall_ptr: felt*,
         pedersen_ptr: HashBuiltin*,

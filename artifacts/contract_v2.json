@@ -50,6 +50,12 @@
             "type": "function"
         },
         {
+            "inputs": [],
+            "name": "reset_balance",
+            "outputs": [],
+            "type": "function"
+        },
+        {
             "inputs": [
                 {
                     "name": "new_implementation",
@@ -65,8 +71,12 @@
         "CONSTRUCTOR": [],
         "EXTERNAL": [
             {
-                "offset": "0xbe",
+                "offset": "0xd5",
                 "selector": "0xf2f7c15cbe06c8d94597cd91fd7f3369eae842359235712def5584f8d270cd"
+            },
+            {
+                "offset": "0xbf",
+                "selector": "0x2b675861879eb6b780a0dc73988c6a3c2539598abaa104fcfc814dbbd5977b9"
             },
             {
                 "offset": "0x87",
@@ -288,12 +298,35 @@
             "0x48127ffb7fff8000",
             "0x48127ffb7fff8000",
             "0x208b7fff7fff7ffe",
+            "0x480a7ffb7fff8000",
+            "0x480a7ffc7fff8000",
+            "0x480a7ffd7fff8000",
+            "0x480680017fff8000",
+            "0x0",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffb4",
+            "0x208b7fff7fff7ffe",
+            "0x402b7ffd7ffc7ffd",
+            "0x480280007ffb8000",
+            "0x480280017ffb8000",
+            "0x480280027ffb8000",
+            "0x1104800180018000",
+            "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffff5",
+            "0x40780017fff7fff",
+            "0x1",
+            "0x48127ffc7fff8000",
+            "0x48127ffc7fff8000",
+            "0x48127ffc7fff8000",
+            "0x480680017fff8000",
+            "0x0",
+            "0x48127ffb7fff8000",
+            "0x208b7fff7fff7ffe",
             "0x480a7ffa7fff8000",
             "0x480a7ffb7fff8000",
             "0x480a7ffc7fff8000",
             "0x480a7ffd7fff8000",
             "0x1104800180018000",
-            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffff91",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffff7a",
             "0x208b7fff7fff7ffe",
             "0x482680017ffd8000",
             "0x1",
@@ -335,6 +368,11 @@
                 "autogen/starknet/external/increase_balance/a6db2128a3f3619309185544498483353bb8f7d03759f9658942a6d6c91744e6.cairo": "let ret_value = __wrapped_func{syscall_ptr=syscall_ptr, pedersen_ptr=pedersen_ptr, range_check_ptr=range_check_ptr}(amount=__calldata_arg_amount,)\n%{ memory[ap] = segments.add() %}        # Allocate memory for return value.\ntempvar retdata : felt*\nlet retdata_size = 0\n",
                 "autogen/starknet/external/increase_balance/c7060df96cb0acca1380ae43bf758cab727bfdf73cb5d34a93e24a9742817fda.cairo": "let syscall_ptr = [cast([cast(fp + (-5), felt**)] + 0, felt**)]\n",
                 "autogen/starknet/external/increase_balance/e651458745e7cd218121c342e0915890767e2f59ddc2e315b8844ad0f47d582e.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)]\n",
+                "autogen/starknet/external/reset_balance/424b26e79f70343cc02557f1fbd25745138efb26a3dc5c8b593ca765b73138b7.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, starkware.cairo.common.cairo_builtins.HashBuiltin**)]\n",
+                "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo": "return (syscall_ptr,pedersen_ptr,range_check_ptr,retdata_size,retdata)\n",
+                "autogen/starknet/external/reset_balance/c7060df96cb0acca1380ae43bf758cab727bfdf73cb5d34a93e24a9742817fda.cairo": "let syscall_ptr = [cast([cast(fp + (-5), felt**)] + 0, felt**)]\n",
+                "autogen/starknet/external/reset_balance/e651458745e7cd218121c342e0915890767e2f59ddc2e315b8844ad0f47d582e.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)]\n",
+                "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo": "let ret_value = __wrapped_func{syscall_ptr=syscall_ptr, pedersen_ptr=pedersen_ptr, range_check_ptr=range_check_ptr}()\n%{ memory[ap] = segments.add() %}        # Allocate memory for return value.\ntempvar retdata : felt*\nlet retdata_size = 0\n",
                 "autogen/starknet/external/return/get_balance/fcb65f516f78e51724986e29c03bd9c0c6d6597d269ed5dd468f6cd7c811892f.cairo": "func get_balance_encode_return(ret_value : (res : felt), range_check_ptr) -> (\n        range_check_ptr, data_len : felt, data : felt*):\n    %{ memory[ap] = segments.add() %}\n    alloc_locals\n    local __return_value_ptr_start : felt*\n    let __return_value_ptr = __return_value_ptr_start\n    with range_check_ptr:\n    end\n    return (\n        range_check_ptr=range_check_ptr,\n        data_len=__return_value_ptr - __return_value_ptr_start,\n        data=__return_value_ptr_start)\nend\n",
                 "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo": "let ret_value = __wrapped_func{syscall_ptr=syscall_ptr, pedersen_ptr=pedersen_ptr, range_check_ptr=range_check_ptr}(new_implementation=__calldata_arg_new_implementation,)\n%{ memory[ap] = segments.add() %}        # Allocate memory for return value.\ntempvar retdata : felt*\nlet retdata_size = 0\n",
                 "autogen/starknet/external/upgrade/424b26e79f70343cc02557f1fbd25745138efb26a3dc5c8b593ca765b73138b7.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, starkware.cairo.common.cairo_builtins.HashBuiltin**)]\n",
@@ -3495,7 +3533,7 @@
                         "end_col": 42,
                         "end_line": 15,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
@@ -3509,7 +3547,7 @@
                                         "end_col": 31,
                                         "end_line": 17,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 17,
                                         "start_line": 17
@@ -3537,7 +3575,7 @@
                         "end_col": 71,
                         "end_line": 15,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
@@ -3551,7 +3589,7 @@
                                         "end_col": 31,
                                         "end_line": 17,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 17,
                                         "start_line": 17
@@ -3579,7 +3617,7 @@
                         "end_col": 88,
                         "end_line": 15,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
@@ -3593,7 +3631,7 @@
                                         "end_col": 31,
                                         "end_line": 17,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 17,
                                         "start_line": 17
@@ -3621,7 +3659,7 @@
                         "end_col": 31,
                         "end_line": 17,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 17,
                         "start_line": 17
@@ -3646,7 +3684,7 @@
                                 "end_col": 31,
                                 "end_line": 17,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -3660,7 +3698,7 @@
                                                 "end_col": 32,
                                                 "end_line": 18,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 5,
                                                 "start_line": 18
@@ -3700,7 +3738,7 @@
                                 "end_col": 31,
                                 "end_line": 17,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -3714,7 +3752,7 @@
                                                 "end_col": 32,
                                                 "end_line": 18,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 5,
                                                 "start_line": 18
@@ -3754,7 +3792,7 @@
                                 "end_col": 31,
                                 "end_line": 17,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -3768,7 +3806,7 @@
                                                 "end_col": 32,
                                                 "end_line": 18,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 5,
                                                 "start_line": 18
@@ -3801,7 +3839,7 @@
                         "end_col": 31,
                         "end_line": 18,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 19,
                         "start_line": 18
@@ -3819,7 +3857,7 @@
                         "end_col": 32,
                         "end_line": 18,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 5,
                         "start_line": 18
@@ -3837,7 +3875,7 @@
                         "end_col": 14,
                         "end_line": 19,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 5,
                         "start_line": 19
@@ -3863,7 +3901,7 @@
                                 "end_col": 22,
                                 "end_line": 16,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -3877,7 +3915,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "parent_location": [
                                                     {
@@ -3891,7 +3929,7 @@
                                                                 "end_col": 22,
                                                                 "end_line": 15,
                                                                 "input_file": {
-                                                                    "filename": "contracts/contract.cairo"
+                                                                    "filename": "contracts/contract_v2.cairo"
                                                                 },
                                                                 "start_col": 6,
                                                                 "start_line": 15
@@ -3942,7 +3980,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 15
@@ -3973,7 +4011,7 @@
                                 "end_col": 42,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -3987,7 +4025,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4028,7 +4066,7 @@
                                 "end_col": 71,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4042,7 +4080,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4083,7 +4121,7 @@
                                 "end_col": 88,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4097,7 +4135,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4138,7 +4176,7 @@
                                 "end_col": 22,
                                 "end_line": 16,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4152,7 +4190,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4186,7 +4224,7 @@
                         "end_col": 22,
                         "end_line": 15,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 6,
                         "start_line": 15
@@ -4213,7 +4251,7 @@
                                         "end_col": 22,
                                         "end_line": 15,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 6,
                                         "start_line": 15
@@ -4237,7 +4275,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 15
@@ -4268,7 +4306,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4282,7 +4320,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4323,7 +4361,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4337,7 +4375,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4378,7 +4416,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4392,7 +4430,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4433,7 +4471,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4447,7 +4485,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4488,7 +4526,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4502,7 +4540,7 @@
                                                 "end_col": 22,
                                                 "end_line": 15,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 15
@@ -4543,7 +4581,7 @@
                                 "end_col": 22,
                                 "end_line": 15,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 15
@@ -4566,7 +4604,7 @@
                         "end_col": 37,
                         "end_line": 24,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
@@ -4580,7 +4618,7 @@
                                         "end_col": 31,
                                         "end_line": 26,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 17,
                                         "start_line": 26
@@ -4608,7 +4646,7 @@
                         "end_col": 66,
                         "end_line": 24,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
@@ -4622,7 +4660,7 @@
                                         "end_col": 31,
                                         "end_line": 26,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 17,
                                         "start_line": 26
@@ -4650,7 +4688,7 @@
                         "end_col": 83,
                         "end_line": 24,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
@@ -4664,7 +4702,7 @@
                                         "end_col": 31,
                                         "end_line": 26,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 17,
                                         "start_line": 26
@@ -4692,7 +4730,7 @@
                         "end_col": 31,
                         "end_line": 26,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 17,
                         "start_line": 26
@@ -4710,7 +4748,7 @@
                         "end_col": 17,
                         "end_line": 27,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 5,
                         "start_line": 27
@@ -4737,7 +4775,7 @@
                                         "end_col": 17,
                                         "end_line": 24,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 6,
                                         "start_line": 24
@@ -4761,7 +4799,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 24
@@ -4792,7 +4830,7 @@
                                 "end_col": 19,
                                 "end_line": 25,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 9,
                                 "start_line": 25
@@ -4823,7 +4861,7 @@
                                 "end_col": 19,
                                 "end_line": 25,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4837,7 +4875,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -4878,7 +4916,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4892,7 +4930,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -4933,7 +4971,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 24
@@ -4964,7 +5002,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -4978,7 +5016,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5019,7 +5057,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 24
@@ -5050,7 +5088,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 24
@@ -5081,7 +5119,7 @@
                                 "end_col": 37,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5095,7 +5133,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5136,7 +5174,7 @@
                                 "end_col": 66,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5150,7 +5188,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5191,7 +5229,7 @@
                                 "end_col": 83,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5205,7 +5243,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5239,7 +5277,7 @@
                         "end_col": 17,
                         "end_line": 24,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 6,
                         "start_line": 24
@@ -5265,7 +5303,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5279,7 +5317,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5320,7 +5358,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 24
@@ -5351,7 +5389,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5365,7 +5403,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5406,7 +5444,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5420,7 +5458,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5461,7 +5499,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5475,7 +5513,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5516,7 +5554,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5530,7 +5568,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5571,7 +5609,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
@@ -5585,7 +5623,7 @@
                                                 "end_col": 17,
                                                 "end_line": 24,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 24
@@ -5626,7 +5664,7 @@
                                 "end_col": 17,
                                 "end_line": 24,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 24
@@ -5641,279 +5679,188 @@
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.upgrade"
+                        "__main__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 27,
-                        "end_line": 32,
+                        "end_col": 39,
+                        "end_line": 31,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 31,
-                                "end_line": 118,
+                                "end_col": 35,
+                                "end_line": 19,
                                 "input_file": {
-                                    "filename": "/Users/eric/git/nileproj2/env/lib/python3.7/site-packages/openzeppelin/upgrades/library.cairo"
+                                    "filename": "autogen/starknet/storage_var/balance/decl.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 55,
-                                        "end_line": 36,
+                                        "end_col": 21,
+                                        "end_line": 32,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 5,
-                                        "start_line": 36
+                                        "start_line": 32
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
-                                "start_col": 13,
-                                "start_line": 118
+                                "start_col": 16,
+                                "start_line": 19
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
-                        "start_col": 9,
-                        "start_line": 32
+                        "start_col": 20,
+                        "start_line": 31
                     }
                 },
                 "184": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.upgrade"
+                        "__main__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 35,
-                        "end_line": 33,
+                        "end_col": 68,
+                        "end_line": 31,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 39,
-                                "end_line": 119,
+                                "end_col": 64,
+                                "end_line": 19,
                                 "input_file": {
-                                    "filename": "/Users/eric/git/nileproj2/env/lib/python3.7/site-packages/openzeppelin/upgrades/library.cairo"
+                                    "filename": "autogen/starknet/storage_var/balance/decl.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 55,
-                                        "end_line": 36,
+                                        "end_col": 21,
+                                        "end_line": 32,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 5,
-                                        "start_line": 36
+                                        "start_line": 32
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
-                                "start_col": 13,
-                                "start_line": 119
+                                "start_col": 37,
+                                "start_line": 19
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
-                        "start_col": 9,
-                        "start_line": 33
+                        "start_col": 41,
+                        "start_line": 31
                     }
                 },
                 "185": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.upgrade"
+                        "__main__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 24,
-                        "end_line": 34,
+                        "end_col": 85,
+                        "end_line": 31,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 28,
-                                "end_line": 120,
+                                "end_col": 81,
+                                "end_line": 19,
                                 "input_file": {
-                                    "filename": "/Users/eric/git/nileproj2/env/lib/python3.7/site-packages/openzeppelin/upgrades/library.cairo"
+                                    "filename": "autogen/starknet/storage_var/balance/decl.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 55,
-                                        "end_line": 36,
+                                        "end_col": 21,
+                                        "end_line": 32,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 5,
-                                        "start_line": 36
+                                        "start_line": 32
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
-                                "start_col": 13,
-                                "start_line": 120
+                                "start_col": 66,
+                                "start_line": 19
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
-                        "start_col": 9,
-                        "start_line": 34
+                        "start_col": 70,
+                        "start_line": 31
                     }
                 },
                 "186": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.upgrade"
+                        "__main__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 31,
-                        "end_line": 35,
+                        "end_col": 20,
+                        "end_line": 32,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
-                        "parent_location": [
-                            {
-                                "end_col": 54,
-                                "end_line": 36,
-                                "input_file": {
-                                    "filename": "contracts/contract.cairo"
-                                },
-                                "start_col": 36,
-                                "start_line": 36
-                            },
-                            "While expanding the reference 'new_implementation' in:"
-                        ],
-                        "start_col": 7,
-                        "start_line": 35
+                        "start_col": 19,
+                        "start_line": 32
                     }
                 },
-                "187": {
+                "188": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.upgrade"
+                        "__main__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 55,
-                        "end_line": 36,
+                        "end_col": 21,
+                        "end_line": 32,
                         "input_file": {
-                            "filename": "contracts/contract.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
                         "start_col": 5,
-                        "start_line": 36
-                    }
-                },
-                "189": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__main__.upgrade"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 14,
-                        "end_line": 37,
-                        "input_file": {
-                            "filename": "contracts/contract.cairo"
-                        },
-                        "start_col": 5,
-                        "start_line": 37
+                        "start_line": 32
                     }
                 },
                 "190": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__main__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 40,
-                        "end_line": 2,
+                        "end_col": 14,
+                        "end_line": 33,
                         "input_file": {
-                            "filename": "autogen/starknet/arg_processor/58b3781a772ea30e42f38de384e62c51af98506cdd1cd12d8b780fc4816d12a0.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
-                        "parent_location": [
-                            {
-                                "end_col": 31,
-                                "end_line": 35,
-                                "input_file": {
-                                    "filename": "contracts/contract.cairo"
-                                },
-                                "parent_location": [
-                                    {
-                                        "end_col": 45,
-                                        "end_line": 1,
-                                        "input_file": {
-                                            "filename": "autogen/starknet/arg_processor/5e1cc73f0b484f90bb02da164d88332b40c6f698801aa4d3c603dab22157e902.cairo"
-                                        },
-                                        "parent_location": [
-                                            {
-                                                "end_col": 13,
-                                                "end_line": 31,
-                                                "input_file": {
-                                                    "filename": "contracts/contract.cairo"
-                                                },
-                                                "parent_location": [
-                                                    {
-                                                        "end_col": 57,
-                                                        "end_line": 1,
-                                                        "input_file": {
-                                                            "filename": "autogen/starknet/arg_processor/1b562308a65653425ce06491fa4b4539466f3251a07e73e099d0afe86a48900e.cairo"
-                                                        },
-                                                        "parent_location": [
-                                                            {
-                                                                "end_col": 13,
-                                                                "end_line": 31,
-                                                                "input_file": {
-                                                                    "filename": "contracts/contract.cairo"
-                                                                },
-                                                                "start_col": 6,
-                                                                "start_line": 31
-                                                            },
-                                                            "While handling calldata of"
-                                                        ],
-                                                        "start_col": 35,
-                                                        "start_line": 1
-                                                    },
-                                                    "While expanding the reference '__calldata_actual_size' in:"
-                                                ],
-                                                "start_col": 6,
-                                                "start_line": 31
-                                            },
-                                            "While handling calldata of"
-                                        ],
-                                        "start_col": 31,
-                                        "start_line": 1
-                                    },
-                                    "While expanding the reference '__calldata_ptr' in:"
-                                ],
-                                "start_col": 7,
-                                "start_line": 35
-                            },
-                            "While handling calldata argument 'new_implementation'"
-                        ],
-                        "start_col": 22,
-                        "start_line": 2
+                        "start_col": 5,
+                        "start_line": 33
                     }
                 },
-                "192": {
+                "191": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -5925,10 +5872,10 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 31
@@ -5939,12 +5886,12 @@
                         "start_line": 1
                     }
                 },
-                "193": {
+                "192": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -5952,28 +5899,28 @@
                         "end_col": 64,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/c7060df96cb0acca1380ae43bf758cab727bfdf73cb5d34a93e24a9742817fda.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/c7060df96cb0acca1380ae43bf758cab727bfdf73cb5d34a93e24a9742817fda.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 27,
-                                "end_line": 32,
+                                "end_col": 39,
+                                "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 55,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -5985,8 +5932,8 @@
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
-                                "start_col": 9,
-                                "start_line": 32
+                                "start_col": 20,
+                                "start_line": 31
                             },
                             "While constructing the external wrapper for:"
                         ],
@@ -5994,12 +5941,12 @@
                         "start_line": 1
                     }
                 },
-                "194": {
+                "193": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6007,28 +5954,28 @@
                         "end_col": 110,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/424b26e79f70343cc02557f1fbd25745138efb26a3dc5c8b593ca765b73138b7.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/424b26e79f70343cc02557f1fbd25745138efb26a3dc5c8b593ca765b73138b7.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 35,
-                                "end_line": 33,
+                                "end_col": 68,
+                                "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 82,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6040,8 +5987,8 @@
                                     },
                                     "While expanding the reference 'pedersen_ptr' in:"
                                 ],
-                                "start_col": 9,
-                                "start_line": 33
+                                "start_col": 41,
+                                "start_line": 31
                             },
                             "While constructing the external wrapper for:"
                         ],
@@ -6049,12 +5996,12 @@
                         "start_line": 1
                     }
                 },
-                "195": {
+                "194": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6062,28 +6009,28 @@
                         "end_col": 67,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/e651458745e7cd218121c342e0915890767e2f59ddc2e315b8844ad0f47d582e.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/e651458745e7cd218121c342e0915890767e2f59ddc2e315b8844ad0f47d582e.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 24,
-                                "end_line": 34,
+                                "end_col": 85,
+                                "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 115,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6095,8 +6042,8 @@
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
                                 ],
-                                "start_col": 9,
-                                "start_line": 34
+                                "start_col": 70,
+                                "start_line": 31
                             },
                             "While constructing the external wrapper for:"
                         ],
@@ -6104,59 +6051,23 @@
                         "start_line": 1
                     }
                 },
-                "196": {
+                "195": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 57,
-                        "end_line": 1,
+                        "end_col": 19,
+                        "end_line": 31,
                         "input_file": {
-                            "filename": "autogen/starknet/arg_processor/58b3781a772ea30e42f38de384e62c51af98506cdd1cd12d8b780fc4816d12a0.cairo"
+                            "filename": "contracts/contract_v2.cairo"
                         },
-                        "parent_location": [
-                            {
-                                "end_col": 31,
-                                "end_line": 35,
-                                "input_file": {
-                                    "filename": "contracts/contract.cairo"
-                                },
-                                "parent_location": [
-                                    {
-                                        "end_col": 169,
-                                        "end_line": 1,
-                                        "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
-                                        },
-                                        "parent_location": [
-                                            {
-                                                "end_col": 13,
-                                                "end_line": 31,
-                                                "input_file": {
-                                                    "filename": "contracts/contract.cairo"
-                                                },
-                                                "start_col": 6,
-                                                "start_line": 31
-                                            },
-                                            "While constructing the external wrapper for:"
-                                        ],
-                                        "start_col": 136,
-                                        "start_line": 1
-                                    },
-                                    "While expanding the reference '__calldata_arg_new_implementation' in:"
-                                ],
-                                "start_col": 7,
-                                "start_line": 35
-                            },
-                            "While handling calldata argument 'new_implementation'"
-                        ],
-                        "start_col": 41,
-                        "start_line": 1
+                        "start_col": 6,
+                        "start_line": 31
                     }
                 },
                 "197": {
@@ -6164,26 +6075,7 @@
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 13,
-                        "end_line": 31,
-                        "input_file": {
-                            "filename": "contracts/contract.cairo"
-                        },
-                        "start_col": 6,
-                        "start_line": 31
-                    }
-                },
-                "199": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [
@@ -6192,14 +6084,14 @@
                                 "end_col": 34,
                                 "end_line": 2,
                                 "input_file": {
-                                    "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                    "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 13,
+                                        "end_col": 19,
                                         "end_line": 31,
                                         "input_file": {
-                                            "filename": "contracts/contract.cairo"
+                                            "filename": "contracts/contract_v2.cairo"
                                         },
                                         "start_col": 6,
                                         "start_line": 31
@@ -6216,14 +6108,14 @@
                         "end_col": 24,
                         "end_line": 3,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
                                 "start_line": 31
@@ -6234,12 +6126,12 @@
                         "start_line": 3
                     }
                 },
-                "201": {
+                "199": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6247,28 +6139,28 @@
                         "end_col": 55,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 20,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6289,12 +6181,12 @@
                         "start_line": 1
                     }
                 },
-                "202": {
+                "200": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6302,28 +6194,28 @@
                         "end_col": 82,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 33,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6344,12 +6236,12 @@
                         "start_line": 1
                     }
                 },
-                "203": {
+                "201": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6357,28 +6249,28 @@
                         "end_col": 115,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 49,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6399,12 +6291,12 @@
                         "start_line": 1
                     }
                 },
-                "204": {
+                "202": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6412,28 +6304,28 @@
                         "end_col": 21,
                         "end_line": 4,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 62,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6454,12 +6346,12 @@
                         "start_line": 4
                     }
                 },
-                "206": {
+                "204": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.upgrade"
+                        "__wrappers__.reset_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -6467,28 +6359,28 @@
                         "end_col": 16,
                         "end_line": 3,
                         "input_file": {
-                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                            "filename": "autogen/starknet/external/reset_balance/ef3a79c18d46a9fa62dfdc7620278a45e5a135102b4efbfbcf08b5b08cd0430f.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 13,
+                                "end_col": 19,
                                 "end_line": 31,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 70,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                            "filename": "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 13,
+                                                "end_col": 19,
                                                 "end_line": 31,
                                                 "input_file": {
-                                                    "filename": "contracts/contract.cairo"
+                                                    "filename": "contracts/contract_v2.cairo"
                                                 },
                                                 "start_col": 6,
                                                 "start_line": 31
@@ -6509,7 +6401,910 @@
                         "start_line": 3
                     }
                 },
+                "205": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.reset_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 71,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/reset_balance/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 19,
+                                "end_line": 31,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 31
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
+                },
+                "206": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 27,
+                        "end_line": 38,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 118,
+                                "input_file": {
+                                    "filename": "/Users/eric/git/nileproj2/env/lib/python3.7/site-packages/openzeppelin/upgrades/library.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 55,
+                                        "end_line": 42,
+                                        "input_file": {
+                                            "filename": "contracts/contract_v2.cairo"
+                                        },
+                                        "start_col": 5,
+                                        "start_line": 42
+                                    },
+                                    "While trying to retrieve the implicit argument 'syscall_ptr' in:"
+                                ],
+                                "start_col": 13,
+                                "start_line": 118
+                            },
+                            "While expanding the reference 'syscall_ptr' in:"
+                        ],
+                        "start_col": 9,
+                        "start_line": 38
+                    }
+                },
                 "207": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 35,
+                        "end_line": 39,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 39,
+                                "end_line": 119,
+                                "input_file": {
+                                    "filename": "/Users/eric/git/nileproj2/env/lib/python3.7/site-packages/openzeppelin/upgrades/library.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 55,
+                                        "end_line": 42,
+                                        "input_file": {
+                                            "filename": "contracts/contract_v2.cairo"
+                                        },
+                                        "start_col": 5,
+                                        "start_line": 42
+                                    },
+                                    "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 13,
+                                "start_line": 119
+                            },
+                            "While expanding the reference 'pedersen_ptr' in:"
+                        ],
+                        "start_col": 9,
+                        "start_line": 39
+                    }
+                },
+                "208": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 24,
+                        "end_line": 40,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 28,
+                                "end_line": 120,
+                                "input_file": {
+                                    "filename": "/Users/eric/git/nileproj2/env/lib/python3.7/site-packages/openzeppelin/upgrades/library.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 55,
+                                        "end_line": 42,
+                                        "input_file": {
+                                            "filename": "contracts/contract_v2.cairo"
+                                        },
+                                        "start_col": 5,
+                                        "start_line": 42
+                                    },
+                                    "While trying to retrieve the implicit argument 'range_check_ptr' in:"
+                                ],
+                                "start_col": 13,
+                                "start_line": 120
+                            },
+                            "While expanding the reference 'range_check_ptr' in:"
+                        ],
+                        "start_col": 9,
+                        "start_line": 40
+                    }
+                },
+                "209": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 31,
+                        "end_line": 41,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 54,
+                                "end_line": 42,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "start_col": 36,
+                                "start_line": 42
+                            },
+                            "While expanding the reference 'new_implementation' in:"
+                        ],
+                        "start_col": 7,
+                        "start_line": 41
+                    }
+                },
+                "210": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 55,
+                        "end_line": 42,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "start_col": 5,
+                        "start_line": 42
+                    }
+                },
+                "212": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 14,
+                        "end_line": 43,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "start_col": 5,
+                        "start_line": 43
+                    }
+                },
+                "213": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 40,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/58b3781a772ea30e42f38de384e62c51af98506cdd1cd12d8b780fc4816d12a0.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 41,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 45,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/arg_processor/5e1cc73f0b484f90bb02da164d88332b40c6f698801aa4d3c603dab22157e902.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "parent_location": [
+                                                    {
+                                                        "end_col": 57,
+                                                        "end_line": 1,
+                                                        "input_file": {
+                                                            "filename": "autogen/starknet/arg_processor/1b562308a65653425ce06491fa4b4539466f3251a07e73e099d0afe86a48900e.cairo"
+                                                        },
+                                                        "parent_location": [
+                                                            {
+                                                                "end_col": 13,
+                                                                "end_line": 37,
+                                                                "input_file": {
+                                                                    "filename": "contracts/contract_v2.cairo"
+                                                                },
+                                                                "start_col": 6,
+                                                                "start_line": 37
+                                                            },
+                                                            "While handling calldata of"
+                                                        ],
+                                                        "start_col": 35,
+                                                        "start_line": 1
+                                                    },
+                                                    "While expanding the reference '__calldata_actual_size' in:"
+                                                ],
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While handling calldata of"
+                                        ],
+                                        "start_col": 31,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_ptr' in:"
+                                ],
+                                "start_col": 7,
+                                "start_line": 41
+                            },
+                            "While handling calldata argument 'new_implementation'"
+                        ],
+                        "start_col": 22,
+                        "start_line": 2
+                    }
+                },
+                "215": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 57,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/1b562308a65653425ce06491fa4b4539466f3251a07e73e099d0afe86a48900e.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling calldata of"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
+                },
+                "216": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 64,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/c7060df96cb0acca1380ae43bf758cab727bfdf73cb5d34a93e24a9742817fda.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 27,
+                                "end_line": 38,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 55,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 44,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'syscall_ptr' in:"
+                                ],
+                                "start_col": 9,
+                                "start_line": 38
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 19,
+                        "start_line": 1
+                    }
+                },
+                "217": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 110,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/424b26e79f70343cc02557f1fbd25745138efb26a3dc5c8b593ca765b73138b7.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 35,
+                                "end_line": 39,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 82,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 70,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 9,
+                                "start_line": 39
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 20,
+                        "start_line": 1
+                    }
+                },
+                "218": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 67,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/e651458745e7cd218121c342e0915890767e2f59ddc2e315b8844ad0f47d582e.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 24,
+                                "end_line": 40,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 115,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 100,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 9,
+                                "start_line": 40
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 23,
+                        "start_line": 1
+                    }
+                },
+                "219": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 57,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/58b3781a772ea30e42f38de384e62c51af98506cdd1cd12d8b780fc4816d12a0.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 41,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 169,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 136,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_arg_new_implementation' in:"
+                                ],
+                                "start_col": 7,
+                                "start_line": 41
+                            },
+                            "While handling calldata argument 'new_implementation'"
+                        ],
+                        "start_col": 41,
+                        "start_line": 1
+                    }
+                },
+                "220": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 13,
+                        "end_line": 37,
+                        "input_file": {
+                            "filename": "contracts/contract_v2.cairo"
+                        },
+                        "start_col": 6,
+                        "start_line": 37
+                    }
+                },
+                "222": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [
+                        {
+                            "location": {
+                                "end_col": 34,
+                                "end_line": 2,
+                                "input_file": {
+                                    "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 13,
+                                        "end_line": 37,
+                                        "input_file": {
+                                            "filename": "contracts/contract_v2.cairo"
+                                        },
+                                        "start_col": 6,
+                                        "start_line": 37
+                                    },
+                                    "While constructing the external wrapper for:"
+                                ],
+                                "start_col": 1,
+                                "start_line": 2
+                            },
+                            "n_prefix_newlines": 0
+                        }
+                    ],
+                    "inst": {
+                        "end_col": 24,
+                        "end_line": 3,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 1,
+                        "start_line": 3
+                    }
+                },
+                "224": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 55,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 20,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 9,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'syscall_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 44,
+                        "start_line": 1
+                    }
+                },
+                "225": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 82,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 33,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 21,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 70,
+                        "start_line": 1
+                    }
+                },
+                "226": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 115,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 49,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 34,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 100,
+                        "start_line": 1
+                    }
+                },
+                "227": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 21,
+                        "end_line": 4,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 50,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'retdata_size' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 20,
+                        "start_line": 4
+                    }
+                },
+                "229": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.upgrade"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 16,
+                        "end_line": 3,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/upgrade/01cf0eb538193ad2725822cc1375c42d175a091c20039abd588f161b164243da.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 13,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "contracts/contract_v2.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 70,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/upgrade/4ba2b119ceb30fe10f4cca3c9d73ef620c0fb5eece91b99a99d71217bba1001c.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 13,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "contracts/contract_v2.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 63,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'retdata' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 9,
+                        "start_line": 3
+                    }
+                },
+                "230": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
@@ -6527,12 +7322,12 @@
                         "parent_location": [
                             {
                                 "end_col": 13,
-                                "end_line": 31,
+                                "end_line": 37,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "contracts/contract_v2.cairo"
                                 },
                                 "start_col": 6,
-                                "start_line": 31
+                                "start_line": 37
                             },
                             "While constructing the external wrapper for:"
                         ],
@@ -6667,7 +7462,25 @@
                     }
                 }
             ],
-            "199": [
+            "197": [
+                {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.reset_balance"
+                    ],
+                    "code": "memory[ap] = segments.add()",
+                    "flow_tracking_data": {
+                        "ap_tracking": {
+                            "group": 18,
+                            "offset": 27
+                        },
+                        "reference_ids": {}
+                    }
+                }
+            ],
+            "222": [
                 {
                     "accessible_scopes": [
                         "__main__",
@@ -6678,7 +7491,7 @@
                     "code": "memory[ap] = segments.add()",
                     "flow_tracking_data": {
                         "ap_tracking": {
-                            "group": 18,
+                            "group": 20,
                             "offset": 66
                         },
                         "reference_ids": {}
@@ -6938,11 +7751,51 @@
                 "type": "const",
                 "value": 0
             },
-            "__main__.upgrade": {
+            "__main__.reset_balance": {
                 "decorators": [
                     "external"
                 ],
                 "pc": 183,
+                "type": "function"
+            },
+            "__main__.reset_balance.Args": {
+                "full_name": "__main__.reset_balance.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.reset_balance.ImplicitArgs": {
+                "full_name": "__main__.reset_balance.ImplicitArgs",
+                "members": {
+                    "pedersen_ptr": {
+                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
+                        "offset": 1
+                    },
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 2
+                    },
+                    "syscall_ptr": {
+                        "cairo_type": "felt*",
+                        "offset": 0
+                    }
+                },
+                "size": 3,
+                "type": "struct"
+            },
+            "__main__.reset_balance.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.reset_balance.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__main__.upgrade": {
+                "decorators": [
+                    "external"
+                ],
+                "pc": 206,
                 "type": "function"
             },
             "__main__.upgrade.Args": {
@@ -7087,11 +7940,46 @@
                 "destination": "starkware.cairo.common.memcpy.memcpy",
                 "type": "alias"
             },
+            "__wrappers__.reset_balance": {
+                "decorators": [
+                    "external"
+                ],
+                "pc": 191,
+                "type": "function"
+            },
+            "__wrappers__.reset_balance.Args": {
+                "full_name": "__wrappers__.reset_balance.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.reset_balance.ImplicitArgs": {
+                "full_name": "__wrappers__.reset_balance.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.reset_balance.Return": {
+                "cairo_type": "(syscall_ptr : felt*, pedersen_ptr : starkware.cairo.common.cairo_builtins.HashBuiltin*, range_check_ptr : felt, size : felt, retdata : felt*)",
+                "type": "type_definition"
+            },
+            "__wrappers__.reset_balance.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__wrappers__.reset_balance.__wrapped_func": {
+                "destination": "__main__.reset_balance",
+                "type": "alias"
+            },
+            "__wrappers__.reset_balance_encode_return.memcpy": {
+                "destination": "starkware.cairo.common.memcpy.memcpy",
+                "type": "alias"
+            },
             "__wrappers__.upgrade": {
                 "decorators": [
                     "external"
                 ],
-                "pc": 190,
+                "pc": 213,
                 "type": "function"
             },
             "__wrappers__.upgrade.Args": {

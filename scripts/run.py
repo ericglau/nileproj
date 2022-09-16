@@ -1,28 +1,20 @@
 
-import asyncio
-
 def run(nre):
-    print('from run')
+    print('Testing deploy proxy:')
 
-    # classhash = nre.declare("contract", alias="contract")
-    # print(classhash)
+    addr = nre.deploy_proxy(["contract"])
 
-    nre.deploy_proxy(["contract"])
+    nre.invoke(addr, "increase_balance", params=['1'], abi='artifacts/abis/contract.json')
+
+    print(f"balance: {nre.call(addr, 'get_balance', abi='artifacts/abis/contract.json')}")
 
 
+    print('Testing upgrade proxy:')
 
+    nre.upgrade_proxy([addr, "contract_v2"])
 
-    # address, abi = nre.declare("contract", alias="my_contract")
-    # print(abi, address)
-
-    #print(f'result ${nre.greet(["1", "2"])}')
-
-    # loop = asyncio.get_event_loop()
-    # coroutine = nre.greet(["contract"])
-    # loop.run_until_complete(coroutine)
+    print(f"balance: {nre.call(addr, 'get_balance', abi='artifacts/abis/contract_v2.json')}")
+    nre.invoke(addr, "reset_balance", abi='artifacts/abis/contract_v2.json')
+    print(f"balance: {nre.call(addr, 'get_balance', abi='artifacts/abis/contract_v2.json')}")
     
-    print('done')
-
-    #nre = NileRuntimeEnvironment()
-    #ret = nre.greet(["1", "2"])
-    # ret is equal to 3
+    print('Done test')

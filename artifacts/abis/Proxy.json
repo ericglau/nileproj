@@ -28,35 +28,59 @@
     {
         "inputs": [
             {
-                "name": "amount",
+                "name": "implementation_hash",
                 "type": "felt"
             }
         ],
-        "name": "increase_balance",
+        "name": "constructor",
         "outputs": [],
-        "type": "function"
+        "type": "constructor"
     },
     {
-        "inputs": [],
-        "name": "get_balance",
-        "outputs": [
+        "inputs": [
             {
-                "name": "res",
+                "name": "selector",
                 "type": "felt"
+            },
+            {
+                "name": "calldata_size",
+                "type": "felt"
+            },
+            {
+                "name": "calldata",
+                "type": "felt*"
             }
         ],
-        "stateMutability": "view",
+        "name": "__default__",
+        "outputs": [
+            {
+                "name": "retdata_size",
+                "type": "felt"
+            },
+            {
+                "name": "retdata",
+                "type": "felt*"
+            }
+        ],
         "type": "function"
     },
     {
         "inputs": [
             {
-                "name": "new_implementation",
+                "name": "selector",
                 "type": "felt"
+            },
+            {
+                "name": "calldata_size",
+                "type": "felt"
+            },
+            {
+                "name": "calldata",
+                "type": "felt*"
             }
         ],
-        "name": "upgrade",
+        "name": "__l1_default__",
         "outputs": [],
-        "type": "function"
+        "type": "l1_handler"
     }
 ]

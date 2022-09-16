@@ -7,7 +7,7 @@ def run(nre):
     # classhash = nre.declare("contract", alias="contract")
     # print(classhash)
 
-    nre.greet(["contract"])
+    nre.deploy_proxy(["contract"])
 
 
 

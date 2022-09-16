@@ -5,9 +5,7 @@ def run(nre):
     addr = nre.deploy_proxy(["contract"])
 
     nre.invoke(addr, "increase_balance", params=['1'], abi='artifacts/abis/contract.json')
-
     print(f"balance: {nre.call(addr, 'get_balance', abi='artifacts/abis/contract.json')}")
-
 
     print('Testing upgrade proxy:')
 

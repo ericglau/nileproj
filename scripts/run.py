@@ -1,18 +1,12 @@
 
 def run(nre):
-    print('Testing deploy proxy:')
-
     addr = nre.deploy_proxy(["contract"])
 
     nre.invoke(addr, "increase_balance", params=['1'])
-    print(f"balance: {nre.call(addr, 'get_balance')}")
-
-    print('Testing upgrade proxy:')
+    print(f"balance from v1: {nre.call(addr, 'get_balance')}")
 
     nre.upgrade_proxy([addr, "contract_v2"])
+    print(f"balance from v2: {nre.call(addr, 'get_balance')}")
 
-    print(f"balance: {nre.call(addr, 'get_balance')}")
     nre.invoke(addr, "reset_balance")
-    print(f"balance: {nre.call(addr, 'get_balance')}")
-    
-    print('Done test')
+    print(f"balance after reset from v2: {nre.call(addr, 'get_balance')}")

@@ -49,12 +49,6 @@
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "reset_balance",
-        "outputs": [],
-        "type": "function"
-    },
-    {
         "inputs": [
             {
                 "name": "new_implementation",
@@ -62,6 +56,12 @@
             }
         ],
         "name": "upgrade",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "reset_balance",
         "outputs": [],
         "type": "function"
     }

@@ -28,6 +28,17 @@
     {
         "inputs": [
             {
+                "name": "proxy_admin",
+                "type": "felt"
+            }
+        ],
+        "name": "initializer",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "amount",
                 "type": "felt"
             }

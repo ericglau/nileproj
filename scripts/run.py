@@ -1,19 +1,28 @@
-
+from time import sleep
 from nile.core.account import Account
-from nile.utils import hex_address
 
-def run(nre):
+async def run(nre):
+    print(f"before account")
+
     signer = "PKEY1"
-    account = Account(signer, nre.network)
+    account = await Account(signer, nre.network)
 
-    proxy = nre.deploy_proxy([signer, "contract", hex_address(account.address)])
+    print(f"after account, before proxy")
 
-    account.send(proxy, "increase_balance", calldata=['1'])
-    print(f"balance from v1: {nre.call(proxy, 'get_balance')}")
+    proxy = await nre.deploy_proxy(nre, signer, "contract", [account.address, 523])
 
-    tx = nre.upgrade_proxy([signer, hex_address(proxy), "contract_v2"])
+    print(f"proxy {proxy}")
+
+    await account.send(proxy, "increase_balance", calldata=['1'], watch_mode="track")
+    print(f"balance from v1: {await nre.call(proxy, 'get_balance')}")
+    print(f"bal2 from v1: {await nre.call(proxy, 'get_balance2')}")
+
+    tx = await nre.upgrade_proxy(nre, signer, proxy, "contract_v2")
+    # tx = await nre.upgrade_proxy(nre, signer, proxy, "contract_v2", call="increase_balance", args=[5])
+    # tx = await nre.upgrade_proxy(nre, signer, proxy, "contract_v2", call="reset_balance")
+
     print(f"upgrade tx: {tx}")
-    print(f"balance from v2: {nre.call(proxy, 'get_balance')}")
+    print(f"balance from v2: {await nre.call(proxy, 'get_balance')}")
 
-    account.send(proxy, "reset_balance", calldata=[])
-    print(f"balance after reset from v2: {nre.call(proxy, 'get_balance')}")
+    await account.send(proxy, "reset_balance", calldata=[], watch_mode="track")
+    print(f"balance after reset from v2: {await nre.call(proxy, 'get_balance')}")
